@@ -9,7 +9,7 @@
     font-family: "Nunito", sans-serif;
     background-color: black;
 
-    border: 1px solid red;
+    border: 1px solid transparent;
 }
 
 html {
@@ -63,7 +63,7 @@ html {
                         transition-duration: 200ms;
 
                         &:hover {
-                            color: red;
+                            color: #6e15ff;
 
                             &::after {
                                 width: 16px;
@@ -77,7 +77,7 @@ html {
                             width: 0;
                             height: 4px;
                             border-radius: 2px;
-                            background-color: red;
+                            background-color: #6e15ff;
                             position: absolute;
                             top: 100%;
                             left: 50%;
@@ -149,7 +149,7 @@ html {
                 & li {
 
                     height: 40px;
-                    background-color: white;
+
 
 
                     & img {
@@ -163,35 +163,166 @@ html {
         }
 
         & #experiencias {
-            height: 50vh;
+            height: 75vh;
             color: white;
 
-            & h2 {
-                margin-top: 50px;
-                & #back {
-                    display: flex;
-                    width: 223px;
-                    height: 304px;
-                    
+            & #option {
+                display: flex;
+                justify-content: space-around;
 
-                    & #foto {
-                        display:flex;
-                        
-                    &  h3 {
-                        color: aliceblue;
-                        & p{
-                                color: white;
-                            }
-                        }
-                    }
-                }
+
 
             }
+
+            & p {
+                text-align: center;
+                margin-bottom: 8px;
+                background-color: transparent;
+            }
+
+            & h3 {
+                color: #6e15ff;
+                text-align: center;
+                margin-bottom: 8px;
+                background-color: transparent;
+
+            }
+
+            & h2 {
+                margin-top: 100px;
+            }
+
+            & #back {
+                margin-top: 100px;
+                display: block;
+                width: 223px;
+                height: 304px;
+                border-radius: 10px;
+                background-color: #1f1e1e;
+
+                & #img {
+                    display: flex;
+                    width: 197px;
+                    height: 190px;
+                    margin-left: 12px;
+                    margin-top: 12px;
+
+                }
+
+
+            }
+
+
         }
 
         & #projetos {
+
+            & h2 {
+                margin-bottom: 50px;
+            }
+
             color: white;
-            height: 50vh;
+            height: 200vh;
+
+
+            & #macs {
+                border: 3px solid #161616;
+                background-color: #6e15ff;
+                border-radius: 9px;
+                display: flex;
+                margin: 15px;
+
+                
+
+                & img {
+                    display: flex;
+                    height: 400px;
+                    margin-left: 10px;
+                    background-color: #0e0e0e;
+                    
+                }
+                
+            }
+
+            & #bnt {
+                display: flex;
+                width: 560px;
+                align-items: center;
+                justify-content: center;
+                background-color: #0e0e0e;
+            }
+
+            .glow-on-hover {
+                width: 270px;
+                height: 60px;
+                font-size: 15px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background: #111;
+                border: 1px solid #6e15ff;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+
+            }
+
+            .glow-on-hover:before {
+                content: '';
+                background: linear-gradient(45deg, #7a00ff, #ff7300, #7a00ff, #48ff00, #00ffd5, #002bff, #ff0000, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:active {
+                color: #000
+            }
+
+            .glow-on-hover:active:after {
+                background: transparent;
+            }
+
+            .glow-on-hover:hover:before {
+                opacity: 1;
+            }
+
+            .glow-on-hover:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+
+            @keyframes glowing {
+                0% {
+                    background-position: 0 0;
+                }
+
+                50% {
+                    background-position: 400% 0;
+                }
+
+                100% {
+                    background-position: 0 0;
+                }
+
+            }
         }
     }
 }
